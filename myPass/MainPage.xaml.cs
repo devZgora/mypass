@@ -1,4 +1,5 @@
-﻿namespace myPass
+﻿
+namespace myPass
 {
     public partial class MainPage : ContentPage
     {
