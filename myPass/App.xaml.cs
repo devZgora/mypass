@@ -1,15 +1,21 @@
-﻿namespace myPass
+﻿using myPass.ViewModels;
+
+namespace myPass
 {
     public partial class App : Application
     {
-        public App()
+        private IServiceProvider _serviceProvider; 
+        public App(IServiceProvider pServiceProvider)
         {
+            _serviceProvider = pServiceProvider;
             InitializeComponent();
         }
 
         protected override Window CreateWindow(IActivationState? activationState)
         {
-            return new Window(new AppShell());
+            var shellVm = _serviceProvider.GetRequiredService<ShellViewModel>();
+
+            return new Window(new AppShell(shellVm));
         }
     }
 }

@@ -91,13 +91,19 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="NewPage1.xaml">
+	  <Compile Update="About.xaml.cs">
+	    <DependentUpon>About.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Passwords.xaml.cs">
+	    <DependentUpon>Passwords.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="Passwords.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="NewPage2.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="NewPage3.xaml">
+	  <MauiXaml Update="About.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

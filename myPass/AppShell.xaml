@@ -4,7 +4,8 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:myPass"
-     
+    xmlns:viewMmodel="clr-namespace:myPass.ViewModels"
+    x:DataType="viewMmodel:ShellViewModel"
     Title="myPass">
     <TabBar >
         <!--<Tab Title="Dsdsd"  Icon="appicon.png">
@@ -19,16 +20,16 @@
 
         </Tab>-->
         <ShellContent
-        Title="Home" 
+        Title="Home"  Icon="dotnet_bot.png" 
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
         <ShellContent
-        Title="Passwords"
-        ContentTemplate="{DataTemplate local:NewPage3}"
-        Route="NewPage3" />
+        Title="Passwords" IsEnabled="False"  IsVisible="{Binding IsVisible}"
+        ContentTemplate="{DataTemplate local:Passwords}"
+        Route="Passwords" />
         <ShellContent
         Title="About"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+        ContentTemplate="{DataTemplate local:About}"
+        Route="About" />
     </TabBar>
 </Shell>

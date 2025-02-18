@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using myPass.ViewModels;
 using Syncfusion.Maui.Toolkit.Hosting;
 
 namespace myPass;
@@ -20,7 +21,14 @@ public static class MauiProgram
 #if DEBUG
 		builder.Logging.AddDebug();
 #endif
-
-		return builder.Build();
+        builder.Services.AddSingleton<Shell>();
+        builder.Services.AddSingleton<ShellViewModel>();
+        builder.Services.AddSingleton<MainPage>();
+        builder.Services.AddSingleton<MainPageViewModel>();
+        builder.Services.AddSingleton<Passwords>();
+        builder.Services.AddSingleton<PasswordViewModel>();
+        builder.Services.AddSingleton<About>();
+        builder.Services.AddSingleton<AboutViewModel>();
+        return builder.Build();
 	}
 }

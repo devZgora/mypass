@@ -1,10 +1,13 @@
-﻿namespace myPass
+﻿using myPass.ViewModels;
+
+namespace myPass
 {
     public partial class AppShell : Shell
     {
-        public AppShell()
+        public AppShell(ShellViewModel pVm)
         {
             InitializeComponent();
+            BindingContext = pVm;
         }
     }
 }

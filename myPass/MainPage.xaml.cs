@@ -1,13 +1,16 @@
 ﻿
+using myPass.ViewModels;
+
 namespace myPass
 {
     public partial class MainPage : ContentPage
     {
         int count = 0;
 
-        public MainPage()
+        public MainPage(MainPageViewModel pVm)
         {
             InitializeComponent();
+            BindingContext = pVm;
         }
 
         private void OnCounterClicked(object sender, EventArgs e)
