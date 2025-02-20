@@ -8,25 +8,10 @@
     x:DataType="viewMmodel:ShellViewModel"
     Title="myPass">
     <TabBar >
-        <!--<Tab Title="Dsdsd"  Icon="appicon.png">
-            <ShellContent
-               Title="Passwords"
-               ContentTemplate="{DataTemplate local:NewPage1}"
-               Route="NewPage1" />
-            <ShellContent
-               Title="About"  Icon="appicon.png"
-               ContentTemplate="{DataTemplate local:NewPage2}"
-               Route="NewPage2" />
-
-        </Tab>-->
         <ShellContent
         Title="Home"  Icon="dotnet_bot.png" 
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
-        <ShellContent
-        Title="Passwords" IsEnabled="False"  IsVisible="{Binding IsVisible}"
-        ContentTemplate="{DataTemplate local:Passwords}"
-        Route="Passwords" />
         <ShellContent
         Title="About"
         ContentTemplate="{DataTemplate local:About}"

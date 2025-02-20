@@ -13,9 +13,9 @@ namespace myPass
 
         protected override Window CreateWindow(IActivationState? activationState)
         {
-            var shellVm = _serviceProvider.GetRequiredService<ShellViewModel>();
-
-            return new Window(new AppShell(shellVm));
+            
+            var loginPage = _serviceProvider.GetRequiredService<LoginPage>();
+            return new Window(loginPage) {  Title = "myPass"} ;
         }
     }
 }

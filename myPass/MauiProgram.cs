@@ -21,12 +21,12 @@ public static class MauiProgram
 #if DEBUG
 		builder.Logging.AddDebug();
 #endif
-        builder.Services.AddSingleton<Shell>();
+        builder.Services.AddSingleton<LoginPage>();
+        builder.Services.AddSingleton<LoginPageViewModel>();
+        builder.Services.AddSingleton<AppShell>();
         builder.Services.AddSingleton<ShellViewModel>();
         builder.Services.AddSingleton<MainPage>();
         builder.Services.AddSingleton<MainPageViewModel>();
-        builder.Services.AddSingleton<Passwords>();
-        builder.Services.AddSingleton<PasswordViewModel>();
         builder.Services.AddSingleton<About>();
         builder.Services.AddSingleton<AboutViewModel>();
         return builder.Build();
