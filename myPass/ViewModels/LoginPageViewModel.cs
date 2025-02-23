@@ -22,7 +22,7 @@ namespace myPass.ViewModels
         {
             if (App.Current != null)
             {
-                App.Current.Windows[0].Page = _serviceProvider.GetRequiredService<AppShell>();
+                App.Current.Windows[0].Page = _serviceProvider.GetRequiredService<LoginPage>();
             }
         }
         
