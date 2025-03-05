@@ -21,11 +21,11 @@ namespace myPass
 
         public async Task<ContentPage> GetMainPage()
         {
-            string stringDbPass = await SecureStorage.Default.GetAsync("oauth_token");
+            string stringDbPass = await SecureStorage.Default.GetAsync("secure_token");
 
             try
             {
-                var isBiometricAvailable = await CrossFingerprint.Current.IsAvailableAsync();
+             //   var isBiometricAvailable = await CrossFingerprint.Current.IsAvailableAsync();
 
                 /*
 
@@ -38,8 +38,9 @@ namespace myPass
 
 
                  */
-                if (!string.IsNullOrEmpty(stringDbPass))
+                if (string.IsNullOrEmpty(stringDbPass))
                 {
+                    return _serviceProvider.GetRequiredService<LoginPage>();
                     // jak jest baza to logowanie, jak  nie to tworzenie ....
                 }
                 else
@@ -48,25 +49,26 @@ namespace myPass
                 }
 
 
-                if (isBiometricAvailable)
-                {
-                    var request = new AuthenticationRequestConfiguration("Prove you have fingers!", "Because without it you can't have access");
-                    var authResult = await CrossFingerprint.Current.AuthenticateAsync(request);
+                //if (isBiometricAvailable)
+                //{
+                //    var request = new AuthenticationRequestConfiguration("Prove you have fingers!", "Because without it you can't have access");
+                //    var authResult = await CrossFingerprint.Current.AuthenticateAsync(request);
 
-                    if (authResult.Authenticated)
-                    {
-                        //  MainPage = new MainPage();
-                    }
-                    else
-                    {
-                        //   MainPage = new OtherAuthenticationPage();
-                    }
-                }
-                else
-                {
-                    //    MainPage = new OtherAuthenticationPage();
-                }
-            }catch (Exception ex)
+                //    if (authResult.Authenticated)
+                //    {
+                //        //  MainPage = new MainPage();
+                //    }
+                //    else
+                //    {
+                //        //   MainPage = new OtherAuthenticationPage();
+                //    }
+                //}
+                //else
+                //{
+                //    //    MainPage = new OtherAuthenticationPage();
+                //}
+            }
+            catch (Exception ex)
             {
 
             }

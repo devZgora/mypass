@@ -16,13 +16,13 @@ namespace myPass.ViewModels
         {
             _serviceProvider = pServiceProvider;
         }
-        [RelayCommand]
 
+        [RelayCommand]
         private async Task Login()
         {
             if (App.Current != null)
             {
-                App.Current.Windows[0].Page = _serviceProvider.GetRequiredService<LoginPage>();
+                App.Current.Windows[0].Page = _serviceProvider.GetRequiredService<AppShell>();
             }
         }
         

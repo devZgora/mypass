@@ -5,7 +5,7 @@
              Title="Wait">
     <VerticalStackLayout>
         <Label 
-            Text="Welcome to .NET MAUI!"
+            Text="Autoryzacja wymagana"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
     </VerticalStackLayout>

@@ -26,8 +26,18 @@ namespace myPass
         private async  void App__test(object? sender, EventArgs e)
         {
             await Task.Delay(500);
-            var mainPage = await _serviceProvider.GetRequiredService<MainPageGetter>().GetMainPage();
-            Windows[0].Page = mainPage;
+
+            Windows[0].Page = await _serviceProvider.GetRequiredService<MainPageGetter>().GetMainPage(); 
+            Windows[0].Resumed += App_Resumed;
+        }
+
+        private async void App_Resumed(object? sender, EventArgs e)
+        {
+            if (Windows[0].Page is AppShell)
+            {
+                var mainPage =
+                Windows[0].Page = await _serviceProvider.GetRequiredService<MainPageGetter>().GetMainPage(); ;
+            }
         }
     }
 }
